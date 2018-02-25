@@ -40,28 +40,6 @@ let changeAnimationPlayState = (objs) => {
   })
 };
 
-let mouseDownFun = (e) => {
-  canMove = true
-}
-
-let getMouseMoveY = (e) => {
-  //当前页面scroll高度
-  const st = document.documentElement.scrollTop || document.body.scrollTop
-  //当前页面scroll高度 + 当前页面Y轴所在位置
-  const Y = st + e.clientY
-  //允许触发拖动事件
-  if(canMove) {
-    console.log("AAAA", Y)
-  } else {
-    return ;
-    console.log("EEEE", e)
-  }
-}
-
-let mouseUpFun = () => {
-  canMove = false
-}
-
 var funs = {
   giveAnimation: giveAnimation,
   changeAnimationPlayState: changeAnimationPlayState,
