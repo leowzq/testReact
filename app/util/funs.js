@@ -1,6 +1,6 @@
-global.NOW = new Date().getTime();
+const NOW = new Date().getTime();
 
-global.giveAnimation = (objs) => {
+let giveAnimation = (objs) => {
   objs.forEach((item, index) => {
     console.log("giveAnimation", item.aName, "start!")
     let element
@@ -25,7 +25,7 @@ global.giveAnimation = (objs) => {
   })
 };
 
-global.changeAnimationPlayState = (objs) => {
+let changeAnimationPlayState = (objs) => {
   let items
   let indexs
   objs.forEach((item, index) => {
@@ -40,9 +40,31 @@ global.changeAnimationPlayState = (objs) => {
   })
 };
 
-var globals = {
-  giveAnimation: giveAnimation,
-  changeAnimationPlayState: changeAnimationPlayState
+let mouseDownFun = (e) => {
+  canMove = true
 }
 
-export default globals;
+let getMouseMoveY = (e) => {
+  //当前页面scroll高度
+  const st = document.documentElement.scrollTop || document.body.scrollTop
+  //当前页面scroll高度 + 当前页面Y轴所在位置
+  const Y = st + e.clientY
+  //允许触发拖动事件
+  if(canMove) {
+    console.log("AAAA", Y)
+  } else {
+    return ;
+    console.log("EEEE", e)
+  }
+}
+
+let mouseUpFun = () => {
+  canMove = false
+}
+
+var funs = {
+  giveAnimation: giveAnimation,
+  changeAnimationPlayState: changeAnimationPlayState,
+}
+
+export default funs;

@@ -7,7 +7,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, './'),
         // publicPath:'/js',
-        filename: "[name].bundle.js"
+        filename: "bundle.js"
     },
     devServer: {
       historyApiFallback: {

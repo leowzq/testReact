@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import Name from './PgName';
 import EventCenter from '../util/EventCenter';
-import globals from '../util/funs';
+import funs from '../util/funs';
 var dispatch
 
 class PgIndex extends React.Component {
@@ -26,7 +26,7 @@ class PgIndex extends React.Component {
         position: 'absolute'
       }
     ]
-    giveAnimation(objs);
+    funs.giveAnimation(objs);
   }
 
   leftDivAnimationCallback() {
@@ -85,6 +85,7 @@ var styles = {
     height: window.innerHeight,
     width: window.innerWidth,
     display: 'flex',
+    backgroundColor: 'white'
   },
   leftDiv: {
     display: 'flex',

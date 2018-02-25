@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import EventCenter from '../util/EventCenter';
+import funs from '../util/funs';
 
 class PgName extends React.Component {
   constructor(props) {
@@ -39,7 +40,7 @@ class PgName extends React.Component {
         playState: re ? re : 'paused'
       }
     ]
-    changeAnimationPlayState(objs);
+    funs.changeAnimationPlayState(objs);
   }
 
   componentDidMount() {
@@ -69,7 +70,8 @@ var styles = {
     justifyContent: 'center',
     alignItems: 'center',
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    backgroundColor: 'white'
   },
   indexPic: {
     width: 150,
