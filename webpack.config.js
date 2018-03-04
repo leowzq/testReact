@@ -1,9 +1,10 @@
 const path = require('path');
 module.exports = {
-    entry: {
-      main: path.resolve(__dirname, './app/main.js'),
-      // global: path.resolve(__dirname, './app/util/funs.js'),
-    },
+    // entry: {
+    //   main: path.resolve(__dirname, './app/main.js'),
+    //   // global: path.resolve(__dirname, './app/util/funs.js'),
+    // },
+    entry: ["babel-polyfill", "./app/main.js"],
     output: {
         path: path.resolve(__dirname, './'),
         // publicPath:'/js',

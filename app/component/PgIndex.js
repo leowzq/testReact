@@ -63,7 +63,7 @@ class PgIndex extends React.Component {
 
   render() {
     return(
-      <div style={{...styles.bigDiv}}>
+      <div style={{...styles.bigDiv}} className="bigDiv">
         <div id="leftDiv" style={{...styles.leftDiv}}></div>
         <div id="leftIntroduce" style={{...styles.leftIntroduce}}>
           <div style={{...styles.name}}>Leo</div>
@@ -84,38 +84,27 @@ var styles = {
   bigDiv: {
     height: window.innerHeight,
     width: window.innerWidth,
-    display: 'flex',
-    backgroundColor: 'white'
+    backgroundColor: 'white',
   },
   leftDiv: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'column',
     height: window.innerHeight,
     width: '35%',
     backgroundColor: '#32353e'
   },
   name: {
-    display: 'flex',
     fontSize: 70,
     fontWeight: 'bold',
     color: 'white'
   },
   choosenDiv: {
-    display: 'flex',
     marginTop: 5,
     fontSize: 20,
-    // color: '#f1bf5e', 橙色
-    color: '#67c3f5'
+    color: '#67c3f5',
   },
   leftIntroduce: {
-    display: 'flex',
     height: '100%',
     width: '35%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'column'
+    left: 0
   }
 }
 

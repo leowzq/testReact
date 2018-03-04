@@ -51,7 +51,7 @@ class PgName extends React.Component {
 
   render() {
     return(
-      <div style={{...styles.picDiv, width: this.props.divWidth ? this.props.divWidth : '100%'}}>
+      <div id="picDiv" style={{...styles.picDiv, width: this.props.divWidth ? this.props.divWidth : '100%'}}>
         <Link to="/leo">
           <img id="indexPic" src="./app/img/index.jpg" style={{...styles.indexPic}}/>
           {/* <canvas id="index" style={{...styles.indexPic}}></canvas> */}
@@ -67,10 +67,10 @@ class PgName extends React.Component {
 
 var styles = {
   picDiv: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    display: 'flex',
-    flexDirection: 'column',
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    // display: 'flex',
+    // flexDirection: 'column',
     backgroundColor: 'white'
   },
   indexPic: {
@@ -81,9 +81,9 @@ var styles = {
     padding: 5
   },
   introduceDiv: {
-    display: 'flex',
-    alignItems: 'center',
-    flexDirection: 'column'
+    // display: 'flex',
+    // alignItems: 'center',
+    // flexDirection: 'column'
   }
 }
 
