@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import EventCenter from '../util/EventCenter';
 import funs from '../util/funs';
+import Mask from './mask';
 let canMove = false
 
 class PgNameIndex extends React.Component {
@@ -10,10 +11,13 @@ class PgNameIndex extends React.Component {
 		this.state = {
       y: 0,
       yValue: 0,
+      showMask: true,
+      blur: 2
 		};
 	}
 
   getMouseMoveY(e){
+    console.log("EEE", e)
     //当前页面scroll高度
     const st = document.documentElement.scrollTop || document.body.scrollTop
     //当前鼠标所在Y轴位置
@@ -42,14 +46,31 @@ class PgNameIndex extends React.Component {
     canMove = true
   }
 
-  componentDidMount() {
+  maskClick() {
+    console.log("AAAAAAA")
+    this.setState({
+      showMask: false,
+      blur: 0
+    })
+  }
 
+  componentDidMount() {
+    var sty = document.getElementsByTagName("div")[2].style
+    console.log("sty", sty)
   }
 
   render() {
     return(
-      <div style={{backgroundColor: 'black', overflow: 'hidden'}}>
-        <div style={{...styles.bigDiv, WebkitTransform: `translateY(${this.state.y}px)`}}
+      <div style={{overflow: 'hidden'}} onClick={this.maskClick.bind(this)}>
+        {
+          this.state.showMask == true ?
+          <Mask opacity={.2}/> :
+          null
+        }
+        <div style={{...styles.bigDiv,
+           WebkitTransform: `translateY(${this.state.y}px)`,
+           filter: `blur(${this.state.blur}px)`
+         }}
           onMouseMove={this.getMouseMoveY.bind(this)}
           onMouseDown={this.mouseDownFun.bind(this)}
           onMouseUp={this.mouseUpFun.bind(this)}
@@ -69,7 +90,7 @@ var styles = {
     width: window.innerWidth,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
+    // backgroundColor: 'white',
     fontSize: 50
   }
 }
