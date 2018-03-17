@@ -41,12 +41,13 @@ class PgIndex extends React.Component {
   changeName() {
     var action = {
       type: 'name',
-      text: 'test'
+      name: 'test'
     }
     dispatch(action);
   }
 
   componentDidMount() {
+    console.log("THISSSSSS", this.refs.divs)
     dispatch = this.props.dispatch;
     this.leftAnimation();
     let introduceAnimation = document.getElementById("leftIntroduce");
@@ -63,7 +64,9 @@ class PgIndex extends React.Component {
 
   render() {
     return(
-      <div style={{...styles.bigDiv}} className="bigDiv">
+      <div style={{...styles.bigDiv}} className="bigDiv"
+        ref="divs"
+        >
         <div id="leftDiv" style={{...styles.leftDiv}}></div>
         <div id="leftIntroduce" style={{...styles.leftIntroduce}}>
           <div style={{...styles.name}}>Leo</div>
